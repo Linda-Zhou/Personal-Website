@@ -1,0 +1,154 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>About &#8211; home</title>
+
+<meta name="keywords" content="about">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="About">
+
+
+
+
+<meta name="twitter:card" content="summary">
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="About">
+
+
+<meta property="og:site_name" content="home">
+
+
+
+
+
+
+
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+
+
+<![endif]-->
+
+<!-- Modernizr -->
+
+
+<!--<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'> -->
+<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic|Archivo+Narrow|Barlow+Condensed|IBM+Plex+Sans:400,700|Pragati+Narrow' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+
+<!-- 32x32 -->
+
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+
+
+</head>
+
+<body class="page">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="home.html">home</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+					    
+					    <li><a href="Linda_Zhou_resume.pdf", target="_blank" >Resume</a></li>
+					  
+					    
+					    <li><a href="project_list.html" >Projects</a></li>
+
+					    <li><a href="misc.html" >Misc</a></li>
+					  
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+
+	<img src="Linkedin_photo.png" class="bio-photo" alt="Shuoyang Ding bio photo"></a>
+
+<h3>Linda Zhou</h3>
+<p></p>
+<a href="mailto:lzhou54@jhu.edu" class="author-social" target="_blank"><i class="fa fa-envelope-square"></i> Email</a>
+
+<a href="https://github.com/Linda-Zhou" class="author-social" target="_blank"><i class="fa fa-github"></i> Github</a>
+
+<a href="https://www.linkedin.com/in/linda-zhou-43a291127/" class="author-social" target="_blank"><i class="fa fa-github"></i> LinkedIn</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+  <article>
+    <h1> GWAS of AASK Proteins</h1>
+    <div class="article-wrap">
+      <p> <strong>What is GWAS? </strong> <p>
+      <p> <a href="https://en.wikipedia.org/wiki/Genome-wide_association_study">The genome-wide association study (GWAS)</a> is a powerful tool to study genetic determinants of disease traits and generate insights into disease pathophysiology. What you do for a genome-wide association study is find a lot of people who have the disease, a lot of people who don't, and who are otherwise well matched. And then, searching across the entire genome using SNPs, you try to find a place where there is a consistent difference.<p>
+      <p> <strong>What package did we use? What are the steps to perform a GWAS? </strong><p>
+      <p> We used FAST.2.4 R package<a href="https://bitbucket.org/baderlab/fast/wiki/InputFileFormats"> [Read more] </a><p>
+      <p>  The steps are:<p>
+      <p> 1. Prepare Input Genotype Data in FAST format, individual id file (option --indiv-file), Phenotype + Covariate File (option --trait-file). Note that For both single SNP and gene-based Cox methods, the phenotype file requires 7 mandatory columns: Family ID, Individual ID, Paternal ID, Maternal ID, Sex (1=male; 2=female; other=unknown), Status, Time to Event. Details refer to: https://bitbucket.org/baderlab/fast/wiki/InputFileFormats <p>
+      <p>2. Run GWAS with FAST package<p>
+      <p>3. perform QC (quality control) to filter MAF > 0.05 and produce Manhattan plot. <p>
+      <p> <strong>What are the outputs? How do we interpret them? </strong><p>
+      <img src="gwas.png" alt="gwas" width="1280" height="512">
+      <p> The graph above is a Manhattan plot, it's the main output from a GWAS study. The x-axis of the graph represents each of the 23 chromosomes, and the y-axia is the negative log of p-value. Each dot represents a SNP. As we can see from the graph, there's a peak on chromosome 11, we can conclude that there's a 'hit' on chromosome 11, negative logarithm of the association p-value for each single nucleotide polymorphism (SNP) displayed on the y-axis, meaning that a block of SNPs on chromosome 11 made the difference of the protein level for group of people with disease and the control group.  <p>
+      <p> <strong>How did we apply GWAS on real world problems? </strong><p>
+      <p> <a href="https://jasn.asnjournals.org/content/jnephrol/32/9/2291.full.pdf?with-ds=yes"> [A paper we published on 2021]</a> <p>
+      <p> We quantified the association between 4877 plasma proteins and a composite outcome of ESKD or decline in eGFR by ≥50% among 9406 participants in the Atherosclerosis Risk in Communities (ARIC) Study. For validation, we evaluated proteins with significant associations (false discovery rate <5%) in both time periods in 3249 participants in the Chronic Renal Insufficiency Cohort (CRIC) and 703 participants in the African American Study of Kidney Disease and Hypertension (AASK). <p>
+      <p>In models adjusted for multiple covariates, including baseline eGFR and albuminuria, we identified 13 distinct proteins that were significantly associated with the composite end point in both time periods, including TNF receptor superfamily members 1A and 1B, trefoil factor 3, and β-trace protein. Of these proteins, 12 were also significantly associated in CRIC, and nine were significantly associated in AASK. Higher levels of each protein associated with higher risk of 50% eGFR decline or ESKD. <p>
+
+
+
+
+
+

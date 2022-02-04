@@ -1,0 +1,147 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>About &#8211; home</title>
+
+<meta name="keywords" content="about">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="About">
+
+
+
+
+<meta name="twitter:card" content="summary">
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="About">
+
+
+<meta property="og:site_name" content="home">
+
+
+
+
+
+
+
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+
+
+<![endif]-->
+
+<!-- Modernizr -->
+
+
+<!--<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'> -->
+<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic|Archivo+Narrow|Barlow+Condensed|IBM+Plex+Sans:400,700|Pragati+Narrow' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+
+<!-- 32x32 -->
+
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+
+
+</head>
+
+<body class="page">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="home.html">home</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+					    
+					    <li><a href="Linda_Zhou_resume.pdf" , target="_blank">Resume</a></li>
+					  
+					    
+					    <li><a href="project_list.html" >Projects</a></li>
+
+					    <li><a href="misc.html" >Misc</a></li>
+					  
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+
+	<img src="Linkedin_photo.png" class="bio-photo" alt="Shuoyang Ding bio photo"></a>
+
+<h3>Linda Zhou</h3>
+<p></p>
+<a href="mailto:lzhou54@jhu.edu" class="author-social" target="_blank"><i class="fa fa-envelope-square"></i> Email</a>
+
+<a href="https://github.com/Linda-Zhou" class="author-social" target="_blank"><i class="fa fa-github"></i> Github</a>
+
+<a href="https://www.linkedin.com/in/linda-zhou-43a291127/" class="author-social" target="_blank"><i class="fa fa-github"></i> LinkedIn</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+  <article>
+    <h1>PM2.5 and hospitalization rate due to pulmonary hypertension</h1>
+    <div class="article-wrap">
+
+
+
+      <p> This is a special study project I did with <a href="https://www.biostat.jhsph.edu/~rpeng/">Prof. Roger Peng</a> in my first year graduate school study. The question is to quantify the association between PM2.5 and hospital admission for respiratory disease in two states in the US: California and Arizona. <p>
+      <p> The first time we met he gave me two publications on that topic and let me find five questions that I don't understand. I am curious about how missing values are handled since there are lots of missing values in our dataset. So we focused on how to handle missing values before we dived into the actual question. <p>
+      <p> <a href="missing_data.html"> [here]</a>
+      <p> This was the second time we met, I made a graph of the missing pattern by latitude and longitude. Then I found that missing values in California do not have obvious spatial pattern, but in Arizona, missing values are clustered in its two major cities. Then I fit a poisson model on missingness vs cases to see if it's missing at random or not. The coefficient associated with pm25 is not significantly different from 0. So we conclude that there’s no relationship between missingness and cases/primary (missing at random). <p>
+
+      <p>Then, what we did is that we included a weight of 1/(1-Pr_missing) when fitting the logistic regression. That is, give the non-missing observations more weight and vice versa. 
+      <p> <a href="missing_data2.html"> [here]</a>
+      <p> Lastly, we decide to limit our population to only major cities (population > 2500). We found no positive correlation in major cities of Arizona. And if specify population > certain amount, we can observe a positive correlation between pmcoarse and hospitalization rates. When pm2.5>15, pmcoarse>16, there is a significant increases of hospitalization rate.
+      <p> <a href="hosp_vs_pm.html"> [here]</a>
+
+

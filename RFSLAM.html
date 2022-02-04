@@ -1,0 +1,150 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>About &#8211; home</title>
+
+<meta name="keywords" content="about">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="About">
+
+
+
+
+<meta name="twitter:card" content="summary">
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="About">
+
+
+<meta property="og:site_name" content="home">
+
+
+
+
+
+
+
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+
+
+<![endif]-->
+
+<!-- Modernizr -->
+
+
+<!--<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'> -->
+<link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Serif:400,700,400italic|Archivo+Narrow|Barlow+Condensed|IBM+Plex+Sans:400,700|Pragati+Narrow' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+
+<!-- 32x32 -->
+
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+
+
+</head>
+
+<body class="page">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="home.html">home</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+					    
+					    <li><a href="Linda_Zhou_resume.pdf", target="_blank">Resume</a></li>
+					  
+					    
+					    <li><a href="project_list.html" >Projects</a></li>
+
+					    <li><a href="misc.html" >Misc</a></li>
+					  
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+
+	<img src="Linkedin_photo.png" class="bio-photo" alt="Shuoyang Ding bio photo"></a>
+
+<h3>Linda Zhou</h3>
+<p></p>
+<a href="mailto:lzhou54@jhu.edu" class="author-social" target="_blank"><i class="fa fa-envelope-square"></i> Email</a>
+
+<a href="https://github.com/Linda-Zhou" class="author-social" target="_blank"><i class="fa fa-github"></i> Github</a>
+
+<a href="https://www.linkedin.com/in/linda-zhou-43a291127/" class="author-social" target="_blank"><i class="fa fa-github"></i> LinkedIn</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+  <article>
+    <h1>Predicting of Sudden Cardiac Death Risk With RF-SLAM</h1>
+    <div class="article-wrap">
+      <p> <strong>Why interested in Sudden Cardiac Death? </strong> <p>
+      <p> Sudden cardiac death (SCD) is a sudden, unexpected death caused by loss of heart function (sudden cardiac arrest). Sudden cardiac death is the largest cause of natural death in the United States, causing about 325,000 adult deaths in the United States each year. <p>
+      <p> <strong>What methods did we use to predict such a devastating disease? </strong><p>
+      <p> We used RF-SLAM because it is a novel statistical and machine learning method that improves risk prediction by incorporating time-varying information and accommodating a large number of predictors, their interactions, and missing values.<a href="https://www.researchgate.net/publication/338255105_Clinical_risk_prediction_with_random_forests_for_survival_longitudinal_and_multivariate_RF-SLAM_data_analysis">[Read more] <p></a>
+      <p> <strong>What data did we use? </strong><p>
+      <p> We used The Atherosclerosis Risk in Communities (ARIC) study. ARIC is an ongoing longitudinal cohort of 15,792 middle-aged men and women recruited from four communities in the U.S.: Forsyth County, North Carolina; Jackson, Mississippi; suburbs of Minneapolis, Minnesota; and Washington County, Maryland at 1987-1989 (visit 1). The 3 short-term follow-up visits occurred approximately three years apart: 1990-1992 (visit 2), 1993-1995 (visit 3), 1996-1998 (visit 4). 82 time-varying variables (demographics, lifestyle factors, clinical characteristics, biomarkers, etc.) collected at
+four visits over 12 years (1987-98) were used as candidate predictors. <p>
+      <p> <strong>What's the prediction accuracy? </strong><p>
+      <img src="rfslam.png" alt="RF SLAM" width="1280" height="512">
+      <p> We accessed the predictive accuracy by comparing the area under the receiver operating characteristic curve (AUC) through out-of-bag prediction for ML models and 5-fold cross validation for the Poisson regression models. Compared to different Poisson regression models (AUC at 6-year ranges from 0.77-0.83), the ML model improved prediction (AUC at 6-
+year 0.89). Using the top ML predictors to select variables, the Poisson regression model AUC at 6-year was 0.77, suggesting that the non-linear dependencies and interactions captured by ML are the main reasons for its improved prediction performance. <p>
+
+
+
+
+
+
